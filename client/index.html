@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Find you the right food">
+    <meta name="author" content="Zhongkai Liu">
+    <link rel="icon" href="./assets/favicon.ico">
+
+    <title>EatWhere</title>
+    <link rel="stylesheet" href="/public/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+  </head>
+  <body ng-app="eatWhere">
+    <div class="container">
+      <div class="row banner">
+        <div class="col-md-offset-1 col-md-4 float-left">
+          <h1><strong>EatWhere</strong></h1>
+        </div>
+        <div class="col-md-6 float-right">
+          <div style="float:right">
+            <nav>
+              <ul class="nav nav-pills">
+
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div ui-view class="view col-md-offset-1 col-md-10 formWrapper">
+
+      </div>
+    </div>
+    <!-- Dependencies -->
+    <script src="/public/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/public/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/public/lib/angular/angular.js"></script>
+    <script src="/public/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/public/lib/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="/public/lib/lodash/dist/lodash.min.js"></script>
+    <script src="/public/lib/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqfzn0OQlUyYTs3_fACxy-ZOyD874n3bg"></script>
+    <script src="/public/lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
+
+    <!-- Application Source Code -->
+    <script src="app/app.js"></script>
+    <script src="app/config/listings.client.routes.js"></script>
+    <script src="app/factories/listings.client.factory.js"></script>
+    <script src="app/factories/classes.client.factory.js"></script>
+    <script src="app/controllers/listings.client.controller.js"></script>
+    <script src="app/controllers/classes.client.controller.js"></script>
+  </body>
+</html>
