@@ -1,8 +1,9 @@
 /* register the modules the application depends upon here*/
 angular.module('dishes');
-
+angular.module('restaurants');
+console.log("App.js");
 /* register the application and inject all the necessary dependencies */
-var app = angular.module('eatWhere', ['ui.router', 'ui.bootstrap', 'uiGmapgoogle-maps', 'listings']);
+var app = angular.module('eatWhere', ['ui.router', 'ui.bootstrap', 'uiGmapgoogle-maps', 'dishes', 'restaurants']);
 
 /* application configuration */
 app.config(['$urlRouterProvider', '$locationProvider',
@@ -10,14 +11,14 @@ app.config(['$urlRouterProvider', '$locationProvider',
     /* https://docs.angularjs.org/api/ng/provider/$locationProvider */
     $locationProvider.html5Mode(true);
 
-    /* go to the '/search' URL if an invalid route is provided TODO*/
+    /* go to the '/search' URL if an invalid route is provided*/
     $urlRouterProvider.otherwise('/search');
   }
 ]);
 
-/* set the initial state of the application TODO*/
+/* set the initial state of the application*/
 app.run(['$state',
   function($state) {
-    $state.go('listings.list');
+    $state.go('search.dishes');
   }
 ]);

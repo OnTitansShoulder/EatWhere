@@ -1,29 +1,35 @@
 /* Import mongoose and define any variables needed to create the schema */
-var mongoose = require('mongoose'), 
+var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 /* Create your schema */
-var listingSchema = new Schema({
+var dishSchema = new Schema({
   name: {
-    type: String, 
+    type: String,
     required: true
-  }, 
-  code: {
-    type: String, 
-    required: true, 
-    unique: true
-  }, 
-  address: String, 
+  },
+  restaurant: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
   coordinates: {
-    latitude: Number, 
+    latitude: Number,
     longitude: Number
+  },
+  ingredients: {
+    type: Array,
+    required: true
   },
   created_at: Date,
   updated_at: Date
 });
 
 /* create a 'pre' function that adds the updated_at (and created_at if not already there) property */
-listingSchema.pre('save', function(next) {
+dishSchema.pre('save', function(next) {
   var currentTime = new Date;
   this.updated_at = currentTime;
   if(!this.created_at)
@@ -34,7 +40,7 @@ listingSchema.pre('save', function(next) {
 });
 
 /* Use your schema to instantiate a Mongoose model */
-var Listing = mongoose.model('Listing', listingSchema);
+var Dish = mongoose.model('Dish', dishSchema);
 
 /* Export the model to make it avaiable to other parts of your Node application */
-module.exports = Listing;
+module.exports = Dish;

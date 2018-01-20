@@ -4,8 +4,8 @@ var path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     config = require('./config'),
-    listingsRouter = require('../routes/listings.server.routes'),
-    classesRouter = require('../routes/classes.server.routes'),
+    dishesRouter = require('../routes/dishes.server.routes'),
+    restaurantsRouter = require('../routes/restaurants.server.routes'),
     getCoordinates = require('../controllers/coordinates.server.controller.js');
 
 module.exports.init = function() {
@@ -25,9 +25,9 @@ module.exports.init = function() {
   app.use('/', express.static(__dirname + '/../../client'));
   app.use('/public', express.static(__dirname + '/../../public'));
 
-  /* Request for searching ... TODO */
-  app.use('/api/searching', listingsRouter);
-  app.use('/api/restaurants', classesRouter);
+  /* Request for searching ... */
+  app.use('/api/dishes', dishesRouter);
+  app.use('/api/restaurants', restaurantsRouter);
 
   /* server wrapper around Google Maps API to get latitude + longitude coordinates from address */
   app.post('/api/coordinates', getCoordinates, function(req, res) {

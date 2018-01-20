@@ -2,33 +2,37 @@ angular.module('dishes').config(['$stateProvider', '$urlRouterProvider',
   function($stateProvider) {
     //Listings state providing
     $stateProvider
-      .state('listings', {
-        url: '/listings',
+      .state('search', {
+        url: '/search',
         abstract: true,
         template: '<ui-view/>'
       })
-      .state('listings.search', {
+      .state('search.dishes', {
         url: '',
-        templateUrl: 'app/views/searching.client.view.html',
+        templateUrl: 'app/views/dishes.client.view.html',
         params: {
           successMessage: null
         }
       })
-      .state('listings.create', {
+      .state('search.restaurants', {
         url: '/create',
-        templateUrl: 'app/views/TODO.client.view.html'
+        templateUrl: 'app/views/restaurants.client.view.html',
+        params: {
+          successMessage: null
+        }
       })
-      .state('listings.add', {
-        url: '/edit/:listingId',
-        templateUrl: 'app/views/TODO.client.view.html'
+      .state('update', {
+        url: '/update',
+        abstract: true,
+        template: '<ui-view/>'
       })
-      .state('listings.map', {
-        url: '/map',
-        templateUrl: 'app/views/TODO.client.view.html'
+      .state('update.dishes', {
+        url: '/dishes',
+        templateUrl: 'app/views/addDish.client.view.html'
       })
-      .state('listings.view', {
-        url: '/:listingId',
-        templateUrl: 'app/views/TODO.client.view.html'
+      .state('update.restaurants', {
+        url: '/restaurants',
+        templateUrl: 'app/views/addRestaurant.client.view.html'
       });
   }
 ]);

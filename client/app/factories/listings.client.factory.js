@@ -1,4 +1,4 @@
-angular.module('dishes').factory('Listings', ['$http',
+angular.module('dishes').factory('Dishes', ['$http',
   function($http) {
     let methods = {
       getAll: function() {
