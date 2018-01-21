@@ -1,6 +1,6 @@
 /* register the modules the application depends upon here*/
-angular.module('dishes');
-angular.module('restaurants');
+angular.module('dishes', []);
+angular.module('restaurants', []);
 console.log("App.js");
 /* register the application and inject all the necessary dependencies */
 var app = angular.module('eatWhere', ['ui.router', 'ui.bootstrap', 'uiGmapgoogle-maps', 'dishes', 'restaurants']);

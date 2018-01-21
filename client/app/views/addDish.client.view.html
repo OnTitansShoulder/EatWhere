@@ -1,0 +1,15 @@
+<div class="row" ng-controller="DishesController">
+  <a class="btn btn-altered btn-space" ui-sref="search.dishes">Search A Dish</a><br>
+  Name:<input ng-model="dish.name" type="text"></input><br>
+  Restaurant:<input ng-model="dish.restaurant" type="text"></input><br>
+  Type:
+    <select ng-model="dish.type" ng-options="type for type in food_types"></select><br/>
+  Offered Time: <input type="radio" ng-model="dish.offered_time" value="Lunch">Lunch</input>
+                <input type="radio" ng-model="dish.offered_time" value="Dinner">Dinner</input><br>
+  Style:<input type="radio" ng-model="dish.style" value="Fast">Fast</input>
+        <input type="radio" ng-model="dish.style" value="Restaurant">Restaurant</input><br>
+  Price:<input ng-model="dish.price" type="text"></input><br>
+  Description:<input ng-model="dish.description" type="text"></input><br>
+  Ingredients:<input ng-model="dish.ingredients" type="text"></input>(Comma separated please)<br>
+  <button ng-click="addDish()">Add Dish</button>
+</div>

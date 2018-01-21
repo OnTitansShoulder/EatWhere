@@ -1,18 +1,81 @@
-<div class="row" ng-controller="DishesController" ng-init="find()">
-  <h1>Search your dishes</h1>
-  <form>
-    Type:
-    <input type="checkbox" value="Chinese">Chinese</input>
-    <input type="checkbox" value="American">American</input>
-    <input type="checkbox" value="Indian">Indian</input>
-    <input type="checkbox" value="Japanese">Japanese</input>
-    <input type="checkbox" value="Mexican">Mexican</input>
+<div ng-controller="DishesController" ng-init="init()">
+  <div class="row">
+    <ul class="nav nav-pills">
+      <li role="presentation" ng-class="request ? 'active' : ''" ng-click="toggle()"><a href="#">Tell me your </a></li>
+      <li role="presentation" ng-class="request ? '' : 'active'" ng-click="toggle()"><a href="#">My food must have</a></li>
+    </ul>
+  </div>
+  <div class="row" ng-class="request ? '' : 'hidden'">
+    <br>
+    <div class="col-sm-6">
+      <legend>Food Type:</legend>
+      <!-- <input type="checkbox" ng-repeat="food_type in food_types" ng-true-value="true" ng-model="{{food_type}}" ng-false-value="''">{{food_type}}</input> -->
+      <div style="display:inline-block" class="well">
+        <div class="input-group" style="float:left; width:100px">
+          <span class="input-group-addon">
+            <input type="checkbox" ng-true-value="'Chinese'" ng-model="food.chf" ng-false-value="''">
+          </span>
+          <input type="text" class="form-control" style="width:90px" value="Chinese" readonly></input>
+        </div><!-- /input-group -->
+        <div class="input-group" style="float:left; width:100px">
+          <span class="input-group-addon">
+            <input type="checkbox" ng-true-value="'American'" ng-model="food.amf" ng-false-value="''">
+          </span>
+          <input type="text" class="form-control" style="width:90px" value="American" readonly>
+        </div><!-- /input-group -->
+        <div class="input-group" style="float:left; width:100px">
+          <span class="input-group-addon">
+            <input type="checkbox" ng-true-value="'Indian'" ng-model="food.inf" ng-false-value="''">
+          </span>
+          <input type="text" class="form-control" style="width:90px" value="Indian" readonly>
+        </div><!-- /input-group -->
+        <div class="input-group" style="float:left; width:100px">
+          <span class="input-group-addon">
+            <input type="checkbox" ng-true-value="'Japanese'" ng-model="food.jaf" ng-false-value="''">
+          </span>
+          <input type="text" class="form-control" style="width:90px" value="Japanese" readonly>
+        </div><!-- /input-group -->
+        <div class="input-group" style="float:left; width:100px">
+          <span class="input-group-addon">
+            <input type="checkbox" ng-true-value="'Mexican'" ng-model="food.mef" ng-false-value="''">
+          </span>
+          <input type="text" class="form-control" style="width:90px" value="Mexican" readonly>
+        </div><!-- /input-group -->
+      </div>
+    </div>
+    <br>
+    <div class="col-sm-6">
+      <legend>Price range:</legend>
+      <div class="well">
+        $<input type="number" class="price" ng-model="food.lob"></input>&emsp;<span class="glyphicon glyphicon-resize-horizontal"></span>&emsp;
+        $<input type="number" class="price" ng-model="food.upb"></input>
+      </div>
+      <br>
+      <legend>Style:</legend>
+      <div class="well">
+        <input type="radio" ng-model="food.style" value="Fast">Fast</input>
+        <input type="radio" ng-model="food.style" value="Restaurant">Restaurant</input>
+      </div>
+      <br>
+    </div>
+    <button ng-click="search()">Find 'em!</button>
+  </div>
+  <div class="row" ng-class="request ? 'hidden' : ''">
 
-    Price range:
-    $<input type="number"></input>&empt;~$<input type="number"></input>
-
-    Style:
-    <input type="radio">Fast</input>
-    <input type="radio">Restaurant</input>
-  </form>
+  </div>
+  <div class="row">
+    <div class="">
+      <div ng-repeat="dish in results" class="col-sm-4 panel-body" style="padding:10px">
+        <div style="width:auto; display:block">
+          <img class="center-block" src="/client/imgs/foodImgs/{{dish.picture}}.jpg" style="width:200px; margin:auto"/>
+        </div>
+        <span>Dish: {{dish.name}}</span><br>
+        <span>Type: {{dish.type}}</span><br>
+        <span>Style: {{dish.style}}</span><br>
+        <span>Price: {{dish.price}}</span><br>
+        <span>Restaurant: {{dish.restaurant}}</span><br>
+        <span>offered_time: {{dish.offered_time}}</span><br>
+      </div>
+    </div>
+  </div>
 </div>

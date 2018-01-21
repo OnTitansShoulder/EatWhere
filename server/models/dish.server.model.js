@@ -12,17 +12,20 @@ var dishSchema = new Schema({
     type: String,
     required: true
   },
-  description: {
-    type: String,
-    required: true
-  },
+  type: String,
+  offered_time: String,
+  style: String,
+  price: Number,
+  picture: String,
+  description: String,
   coordinates: {
     latitude: Number,
     longitude: Number
   },
   ingredients: {
     type: Array,
-    required: true
+    required: true,
+    default: []
   },
   created_at: Date,
   updated_at: Date

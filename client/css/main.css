@@ -70,8 +70,19 @@ nav {
   padding-bottom: 10px;
 }
 
-.view{
+.nav-pills > li {
+    float:none;
+    display:inline-block;
+    zoom:1;
+}
 
+.nav-pills {
+    text-align:center;
+}
+
+.price{
+  width: 50px;
+  border: none
 }
 
 body{

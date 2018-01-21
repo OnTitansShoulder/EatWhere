@@ -16,9 +16,5 @@
   "devDependenciesDisabled": {
     "should": "^7.1.1",
     "supertest": "^1.1.0"
-  },
-  "scripts": {
-    "preinstall": "npm install bower",
-    "postinstall": "bower install"
   }
 }

@@ -3,7 +3,7 @@
   <head>
     <base href="/">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Find you the right food">
     <meta name="author" content="Zhongkai Liu">
@@ -12,8 +12,8 @@
     <title>EatWhere</title>
     <link rel="stylesheet" href="/public/lib/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
-
   </head>
+
   <body ng-app="eatWhere">
     <div class="container">
       <div class="row banner">
@@ -24,8 +24,8 @@
           <div style="float:right">
             <nav>
               <ul class="nav nav-pills">
-                <li><a class="btn btn-altered btn-space" ui-sref="search.dishes">Search A Dish</a></li>
-                <li><a class="btn btn-altered btn-space" ui-sref="search.restaurant">Search A Restaurant</a></li>
+                <!-- <li><a class="btn btn-altered btn-space" ui-sref="addDish">Add A Dish</a></li>
+                <li><a class="btn btn-altered btn-space" ui-sref="search.restaurant">Search A Restaurant</a></li> -->
               </ul>
             </nav>
           </div>
@@ -49,8 +49,8 @@
 
     <!-- Application Source Code -->
     <script src="app/app.js"></script>
-    <script src="app/config/listings.client.routes.js"></script>
-    <script src="app/factories/listings.client.factory.js"></script>
+    <script src="app/routes/client.routes.js"></script>
+    <script src="app/factories/dishes.client.factory.js"></script>
     <script src="app/controllers/dishes.client.controller.js"></script>
   </body>
 </html>

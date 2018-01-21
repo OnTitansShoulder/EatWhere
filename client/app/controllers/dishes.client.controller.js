@@ -1,5 +1,65 @@
 angular.module('dishes').controller('DishesController', ['$scope', '$location', '$stateParams', '$state', 'Dishes',
   function($scope, $location, $stateParams, $state, Dishes){
+    $scope.food_types = ["Chinese", "American", "Indian", "Japanese", "Mexican"];
+    $scope.request = true;
+    $scope.init = function() {
+      $scope.food = {
+        lob: 0,
+        upb: 20,
+        style: 'Restaurant'
+      };
+    };
+
+    $scope.search = function() {
+      let request = { };
+      let food_type = [];
+      if($scope.food.chf) food_type.push($scope.food.chf);
+      if($scope.food.amf) food_type.push($scope.food.amf);
+      if($scope.food.inf) food_type.push($scope.food.inf);
+      if($scope.food.jaf) food_type.push($scope.food.jaf);
+      if($scope.food.mef) food_type.push($scope.food.mef);
+      if(food_type.length == 0)
+        food_type = $scope.food_types;
+      if($scope.food.lob<0) $scope.food.lob = 0;
+      if($scope.food.upb<0) $scope.food.upb = $scope.food.lob + 20;
+      if($scope.food.lob > $scope.food.upb){
+        let temp = $scope.food.lob;
+        $scope.food.lob = $scope.food.upb;
+        $scope.food.upb = temp;
+      }
+      request.type = food_type;
+      request.lowbound = $scope.food.lob;
+      request.upbound = $scope.food.upb;
+      request.style = $scope.food.style;
+
+      Dishes.searchDish(request).then(function(response){
+        $scope.results = response.data.data;
+        console.log(response.data.data);
+      }, function(error){
+        console.log(error);
+      });
+
+      // console.log($scope.results);
+    };
+
+    $scope.addDish = function() {
+      let new_dish = {
+        name: $scope.dish.name,
+        restaurant: $scope.dish.restaurant,
+        type: $scope.dish.type,
+        offered_time: $scope.dish.offered_time,
+        style: $scope.dish.style,
+        price: parseFloat($scope.dish.price),
+        description: $scope.dish.description,
+        ingredients: []
+      };
+      let ingredients = $scope.dish.ingredients.split(",");
+      if(ingredients.length > 1) new_dish.ingredients = ingredients;
+      console.log(new_dish);
+      Dishes.addDish(new_dish);
+    };
+
+    $scope.toggle = function() { $scope.request = !$scope.request;};
 
     $scope.find = function() {
       /* set loader*/
@@ -18,19 +78,6 @@ angular.module('dishes').controller('DishesController', ['$scope', '$location', 
     $scope.findOne = function() {
       debugger;
       $scope.loading = true;
-
-      /*
-        Take a look at 'list-dishes.client.view', and find the ui-sref attribute that switches the state to the view
-        for a single listing. Take note of how the state is switched:
-
-          ui-sref="dishes.view({ listingId: listing._id })"
-
-        Passing in a parameter to the state allows us to access specific properties in the controller.
-
-        Now take a look at 'view-listing.client.view'. The view is initialized by calling "findOne()".
-        $stateParams holds all the parameters passed to the state, so we are able to access the id for the
-        specific listing we want to find in order to display it to the user.
-       */
 
       var id = $stateParams.listingId;
 
@@ -75,11 +122,7 @@ angular.module('dishes').controller('DishesController', ['$scope', '$location', 
     };
 
     $scope.update = function(isValid) {
-      /*
-        Fill in this function that should update a listing if the form is valid. Once the update has
-        successfully finished, navigate back to the 'listing.list' state using $state.go(). If an error
-        occurs, pass it to $scope.error.
-       */
+
        if (!isValid) {
          $scope.$broadcast('show-errors-check-validity', 'articleForm');
 
@@ -95,10 +138,7 @@ angular.module('dishes').controller('DishesController', ['$scope', '$location', 
     };
 
     $scope.remove = function() {
-      /*
-        Implement the remove function. If the removal is successful, navigate back to 'listing.list'. Otherwise,
-        display the error.
-       */
+
       if($scope.listing)
         Dishes.delete($scope.listing._id)
             .then(function(response){

@@ -1,0 +1,100 @@
+#5	Sandwich Devilled Bison & Tuna
+#2	Biryani Tuna & Rabbit
+#3	Sandwich Whelk
+#4	Teriyaki Au gratin Dove & Emu
+#5	Fruit Glazed Sweetened Deer & Raccoon
+#2	Biryani Tuna & Rabbit
+#3	Sandwich Whelk
+#4	Teriyaki Au gratin Dove & Emu
+#5	Fruit Glazed Sweetened Deer & Raccoon
+#1	Pressure Cooked Potato & Dove
+#2	Chilli Veal
+#3	Browned Jellied Ostrich & Squirrel
+#4	Garlic Pigeon & Catfish
+#5	Baked Spiced Toad & Woodcock
+#1	Pickled Seal
+#2	Sausage Apple
+#3	Fajita Sugar Glazed Bear & Steak
+#4	Pie Clam
+#5	Teriyaki Pork/Pig
+#1	Cheesy Pie King Prawn
+#2	Minced Pumpkin & Horse
+#3	en brochette Leek
+#4	Casserole Ostrich
+#5	Burger Fried Grouse
+#1	Au gratin Deep Fryed Chicken
+#2	Garlic Cheese
+#3	Sugar Glazed Whale & Crayfish
+#4	Creamed Parbaked Rat & Prawn
+#5	Concassed Barbecued Whale & Chicken
+#1	Vindaloo Watermelon & Catfish
+#2	Cured Guinea fowl
+#3	Sauted Devilled Lamb & Caribou
+#4	en brochette Shark & Herring
+#5	Braised Octopus
+#1	Pie Mussel & Emu
+#2	Grilled Chickpea
+#3	Honey Glazed Gerbil
+#4	Candied Apple & Clam
+#5	Buttered Fermented Catfish
+#1	Barbecued Prawn
+#2	Velvet Shark & Lamb
+#3	Fajita Rattlesnake
+#4	en papillote Boiled Squirrel
+#5	Pickled Tuna
+#1	Deep Fryed Chickpea & Haddock
+#2	Fried Frog
+#3	Soup à la King Raccoon & Pepper
+#4	Flambé Oyster & Partridge
+#5	Parm Deer
+#1	Sliced Turkey
+#2	Infused Leek & Catfish
+#3	Blanched Jellied Squab & Asparagus
+#4	Shredded Backwoods Cooked Duck & Elk
+#5	Sauted Fermented Squirrel
+#1	en vessie Sandwich Egg & Carrot
+#2	Air Cooked Elephant & Kipper
+#3	Sauted Basted Pork/Pig
+#4	Parbaked Deglazed Egg
+#5	Candied Soured Rat
+#1	Seasoned Seal
+#2	Backwoods Cooked Air Cooked Turkey
+#3	Confited Diced Egg & Dove
+#4	Parbaked Rattlesnake & Leek
+#5	Dry Roasted Pressure Cooked Oyster & Whale
+#1	Velvet Flambé Badger
+#2	Marinated Amandine Herring & Cod
+#3	Backwoods Cooked Squab
+#4	Braised Charboiled Egg
+#5	Stewed Rabbit
+#1	Deep Fryed Infused Squirrel & Clam
+#2	Boiled Fajita Tomato
+#3	Minced Reduced Mango
+#4	Cheesy Artichoke
+#5	Jellied Prawn & Shark
+#1	Broasted Mashed Lamb & Steak
+#2	Infused Marinated Calamari & Haddock
+#3	Parm Elk & Lobster
+#4	Air Cooked Pigeon
+#5	en papillote Boar
+#1	Salted Soured Horse & Oyster
+#2	Coddled Parboiled Tomato
+#3	Casserole Parm Eel & Bacon
+#4	Honey Roasted Charboiled Lamb
+#5	Brined Parbaked Potato & Apple
+#1	à la King Ham & Rat
+#2	Pizza Kebab Clam
+#3	Dry Roasted Confited Shrimp
+#4	Soured Anchovy
+#5	Fruit Glazed Mushroom & Crayfish
+#1	Creamed Ostrich & Peanut
+#2	Biryani Teriyaki Opossum
+#3	Salted Shredded Moose & Cod
+#4	Chilli Squash
+#5	Steamed Coddled Eel
+#1	Grilled Slow Cooked Mushroom & Chickpea
+#2	Braised Cheesy Caribou
+#3	Garlic Flame Grilled Herring & Squirrel
+#4	Soured Cured Pepper & Crab
+#5	Barbecued Anchovy & Haddock
+#5	Kung Pao Chicken

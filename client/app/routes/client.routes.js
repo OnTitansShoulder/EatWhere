@@ -26,12 +26,12 @@ angular.module('dishes').config(['$stateProvider', '$urlRouterProvider',
         abstract: true,
         template: '<ui-view/>'
       })
-      .state('update.dishes', {
-        url: '/dishes',
+      .state('addDish', {
+        url: '/addDish',
         templateUrl: 'app/views/addDish.client.view.html'
       })
-      .state('update.restaurants', {
-        url: '/restaurants',
+      .state('addRestaurant', {
+        url: '/addRestaurant',
         templateUrl: 'app/views/addRestaurant.client.view.html'
       });
   }
