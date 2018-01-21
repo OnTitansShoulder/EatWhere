@@ -1,16 +1,15 @@
 <div ng-controller="DishesController" ng-init="init()">
   <div class="row">
     <ul class="nav nav-pills">
-      <li role="presentation" ng-class="request ? 'active' : ''" ng-click="toggle()"><a href="#">Tell me your </a></li>
-      <li role="presentation" ng-class="request ? '' : 'active'" ng-click="toggle()"><a href="#">My food must have</a></li>
+      <li role="presentation" ng-class="request ? 'active' : ''" ng-click="toggle()"><a href="#">I know my expectations</a></li>
+      <li role="presentation" ng-class="request ? '' : 'active'" ng-click="toggle()"><a href="#">Look for ingredients</a></li>
     </ul>
   </div>
-  <div class="row" ng-class="request ? '' : 'hidden'">
-    <br>
+  <div class="row well" ng-class="request ? '' : 'hidden'" style="margin-top: 20px">
     <div class="col-sm-6">
-      <legend>Food Type:</legend>
       <!-- <input type="checkbox" ng-repeat="food_type in food_types" ng-true-value="true" ng-model="{{food_type}}" ng-false-value="''">{{food_type}}</input> -->
       <div style="display:inline-block" class="well">
+        <legend>Food Type:</legend>
         <div class="input-group" style="float:left; width:100px">
           <span class="input-group-addon">
             <input type="checkbox" ng-true-value="'Chinese'" ng-model="food.chf" ng-false-value="''">
@@ -43,22 +42,21 @@
         </div><!-- /input-group -->
       </div>
     </div>
-    <br>
     <div class="col-sm-6">
-      <legend>Price range:</legend>
       <div class="well">
+        <legend>Price range:</legend>
         $<input type="number" class="price" ng-model="food.lob"></input>&emsp;<span class="glyphicon glyphicon-resize-horizontal"></span>&emsp;
         $<input type="number" class="price" ng-model="food.upb"></input>
       </div>
-      <br>
-      <legend>Style:</legend>
       <div class="well">
+        <legend>Style:</legend>
         <input type="radio" ng-model="food.style" value="Fast">Fast</input>
         <input type="radio" ng-model="food.style" value="Restaurant">Restaurant</input>
       </div>
-      <br>
     </div>
-    <button ng-click="search()">Find 'em!</button>
+    <div class="row nav nav-pills">
+      <button class="btn btn-primary" ng-click="search()">Find 'em!</button>
+    </div>
   </div>
   <div class="row" ng-class="request ? 'hidden' : ''">
 
