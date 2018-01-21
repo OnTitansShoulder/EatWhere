@@ -59,7 +59,20 @@ angular.module('dishes').controller('DishesController', ['$scope', '$location', 
       Dishes.addDish(new_dish);
     };
 
-    $scope.toggle = function() { $scope.request = !$scope.request;};
+    $scope.searchIng = function() {
+      let ingredients = $scope.food.ingredients.split(" ");
+      if(ingredients.length > 0)
+      Dishes.searchIng(ingredients).then(function(response){
+        $scope.results = response.data.data;
+      }, function(err){
+        console.log(err);
+      });
+    }
+
+    $scope.toggle = function() {
+      $scope.request = !$scope.request;
+      $scope.results = [];
+    };
 
     $scope.find = function() {
       /* set loader*/

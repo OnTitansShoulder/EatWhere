@@ -7,6 +7,10 @@ angular.module('dishes').factory('Dishes', ['$http',
 
       addDish: function(dish) {
         return $http.post('/api/dishes/add', dish);
+      },
+
+      searchIng: function(ingredients) {
+        return $http.post('/api/dishes/searching', ingredients);
       }
 
       // read: function(id) {

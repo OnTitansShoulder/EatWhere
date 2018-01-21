@@ -59,7 +59,21 @@
     </div>
   </div>
   <div class="row" ng-class="request ? 'hidden' : ''">
-
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <legend>Some ingredients you really want to have:</legend>
+        <div class="input-group" style="margin-bottom:20px">
+          <span class="input-group-addon">
+            <input type="radio" >
+          </span>
+          <input type="text" class="form-control" ng-model="food.ingredients">
+        </div>
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+    <div class="row nav nav-pills">
+      <button class="btn btn-primary" ng-click="searchIng()">Find 'em!</button>
+    </div>
   </div>
   <div class="row">
     <div class="">

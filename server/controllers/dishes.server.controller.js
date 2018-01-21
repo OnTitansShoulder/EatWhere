@@ -24,6 +24,25 @@ exports.search = function (req, res){
   });
 };
 
+exports.searchIng = function(req, res){
+  let ingredients = req.body;
+  let query = {
+    'ingredients':{ $all: ingredients}
+  };
+  Dish.find(query).exec(function(err, dishes) {
+    if(err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      let data = {
+        data: dishes
+      }
+      console.log(data);
+      res.json(data);
+    }
+  });
+}
+
 exports.create = function(req, res) {
   /* Instantiate a Dish */
   var dish = new Dish(req.body);

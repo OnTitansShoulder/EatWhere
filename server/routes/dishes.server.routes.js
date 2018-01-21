@@ -10,4 +10,8 @@ router.route('/search')
 router.route('/add')
   .post(dishes.create);
 
+router.route('/searching')
+  .post(dishes.searchIng);
+
+
 module.exports = router;
