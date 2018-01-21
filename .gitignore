@@ -6,6 +6,7 @@ node_modules
 
 # bower
 public
+bower_components
 
 # package-lock
 package-lock.json

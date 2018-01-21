@@ -9,7 +9,7 @@ var path = require('path'),
 
 module.exports.init = function() {
   //connect to database
-  mongoose.connect(process.env.DB | config.db.uri);
+  mongoose.connect(process.env.DB || config.db.uri);
 
   //initialize app
   var app = express();
@@ -23,7 +23,7 @@ module.exports.init = function() {
   /* serve static files */
   app.use('/', express.static(__dirname + '/../../client'));
   /* serve resource files */
-  app.use('/public', express.static(__dirname + '/../../public'));
+  app.use('/bower_components', express.static(__dirname + '/../../bower_components'));
   app.use('/client', express.static(__dirname + '/../../client'));
   /* use the dishes router for requests to the api */
   app.use('/api/dishes/', dishRouter);
