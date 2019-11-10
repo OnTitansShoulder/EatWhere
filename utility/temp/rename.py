@@ -7,12 +7,14 @@ def rename(dir, pattern, titlePattern):
         os.rename(pathAndFilename,
                   os.path.join(dir, titlePattern % title + ext))
 
-def reduce(file, charRem):
+def reduce(file):
     file_obj = open(file+".txt", "r")
     file_chg = open(file+"_changed.txt", "w")
     lines = file_obj.readlines()
     for line in lines:
-        file_chg.write(line[3:])
+        file_chg.write(line[3:28])
+        if(len(line) >= 28):
+            file_chg.write("\n")
     file_chg.close()
     file_obj.close()
 
@@ -34,4 +36,4 @@ def picNames():
         count2 = count2 - 1
     file_obj.close()
 
-picNames()
+reduce("foodNames")

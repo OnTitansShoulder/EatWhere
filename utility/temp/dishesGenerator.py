@@ -40,7 +40,7 @@ def generate_dish():
     dish["ingredients"] = []
     count = random_numb(2, 6)
     while(count > 0):
-        dish["ingredients"].append(ingredientNames[random_numb(0, 39)])
+        dish["ingredients"].append(ingredientNames[random_numb(0, 35)])
         count = count - 1
     dish["price"] = generate_price()
     dish["offered_time"] = offered_times[random_numb(0,1)]
